@@ -78,14 +78,13 @@ print(id(my_list))  # Output: 2154880 (Memory Address C)
 ### Why Does It Matter?
 
 ```
-#Immutable Int
+# Immutable Int
 a = 10
 b = a  # Both point to the same integer object '10' in memory
 
 print(id(a))  # Output: 1407325 (Address X)
 print(id(b))  # Output: 1407325 (Address X)
 
-# Now, we "modify" b
 b = b + 1 
 
 print(a)      # Output: 10 (Remains unchanged!)
@@ -103,7 +102,7 @@ list_b.append(99)
 print(list_a) # Output: [1, 2, 3, 99] 
 # list_a changed even though we only touched list_b!
 
-#Mutable List 2
+# Mutable List 2
 list_a = [1, 2, 3]
 list_b = [1, 2, 3]
 
@@ -134,3 +133,35 @@ n = [4, 5, 6]
 m == n # Output: True
 m is n # Output: False
 ```
+
+## Numbers
+
+```
+40 + 20.23          # Bad Pratice
+float(40) + 20.23   # Good Practice
+
+x + y / z           # Bad Practice
+x + ( y / z )       # Good Practice
+
+'hello' + 'world'   # Output: 'helloworld' (Operator Overloading)
+```
+
+x == y < z is the same as x == y and y < z
+
+### repr() vs str() vs print()
+
+```
+repr(): Unambiguous representation for developers. Returns a string. - repr("Hello\nWorld") -> "'Hello\\nWorld'"
+str(): Human-readable string for end users. Returns a string. - str("Hello\nWorld") -> "Hello\nWorld"
+print(): Uses str() internally to output to the console. Returns None. - print("Hello\nWorld") -> Hello\nWorld
+```
+
+### import math
+
+```
+math.floor(-2.6) # Output: -3
+math.ceil(-2.6) # Output: -2
+math.trunc(-2.6) # Output: -2
+```
+
+## Strings
